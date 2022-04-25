@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ user.Login }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ user.Prenom }}</td>
+            </tr>
+            <tr>
+                <th>Pwd</th>
+                <td>{{ user.Pwd }}</td>
+            </tr>
+            <tr>
+                <th>EtatActiv</th>
+                <td>{{ user.EtatActiv ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>EtatConnect</th>
+                <td>{{ user.EtatConnect ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>IsAdminOng</th>
+                <td>{{ user.IsAdminOng ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>DateDernCon</th>
+                <td>{{ user.DateDernCon ? user.DateDernCon|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ user.photo }}</td>
+            </tr>
+            <tr>
+                <th>DateCreat</th>
+                <td>{{ user.DateCreat ? user.DateCreat|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UserCreat</th>
+                <td>{{ user.UserCreat }}</td>
+            </tr>
+            <tr>
+                <th>DateModif</th>
+                <td>{{ user.DateModif ? user.DateModif|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UserModif</th>
+                <td>{{ user.UserModif }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+    {{ include('user/_delete_form.html.twig') }}
+{% endblock %}

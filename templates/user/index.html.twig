@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Pwd</th>
+                <th>EtatActiv</th>
+                <th>EtatConnect</th>
+                <th>IsAdminOng</th>
+                <th>DateDernCon</th>
+                <th>Photo</th>
+                <th>DateCreat</th>
+                <th>UserCreat</th>
+                <th>DateModif</th>
+                <th>UserModif</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.Login }}</td>
+                <td>{{ user.Nom }}</td>
+                <td>{{ user.Prenom }}</td>
+                <td>{{ user.Pwd }}</td>
+                <td>{{ user.EtatActiv ? 'Yes' : 'No' }}</td>
+                <td>{{ user.EtatConnect ? 'Yes' : 'No' }}</td>
+                <td>{{ user.IsAdminOng ? 'Yes' : 'No' }}</td>
+                <td>{{ user.DateDernCon ? user.DateDernCon|date('Y-m-d') : '' }}</td>
+                <td>{{ user.photo }}</td>
+                <td>{{ user.DateCreat ? user.DateCreat|date('Y-m-d') : '' }}</td>
+                <td>{{ user.UserCreat }}</td>
+                <td>{{ user.DateModif ? user.DateModif|date('Y-m-d') : '' }}</td>
+                <td>{{ user.UserModif }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Create new</a>
+{% endblock %}
