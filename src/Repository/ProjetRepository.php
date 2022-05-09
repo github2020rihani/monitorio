@@ -62,7 +62,7 @@ class ProjetRepository extends ServiceEntityRepository
     public function countProjetByLocalisation() {
         return $this->createQueryBuilder('p')
             ->leftJoin('p.location', 'pays')
-            ->select('count(p.id) as nbrProjet', 'pays.nomPays')
+            ->select('count(p.id) as nbrProjet', 'pays.nomPays', 'pays.drapeau')
 //            ->andWhere('p.exampleField = :val')
 //            ->setParameter('val', $value)
             ->orderBy('p.id', 'ASC')

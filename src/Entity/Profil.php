@@ -81,6 +81,8 @@ class Profil implements \JsonSerializable
      */
     private $profilUsers;
 
+
+
     public function __construct()
     {
         $this->permissions = new ArrayCollection();
@@ -265,6 +267,8 @@ class Profil implements \JsonSerializable
 
        return $this;
    }
+
+
 
    
 }

@@ -5,16 +5,18 @@ namespace App\DataFixtures;
 use App\Entity\Profil;
 use App\Entity\ProfilUser;
 use App\Entity\User;
+use App\Entity\Users;
 use App\Repository\ProfilRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserFixtures extends Fixture
 {
 
     private $profilRepository;
 
-    public function __construct(ProfilRepository $profilRepository)
+    public function __construct(ProfilRepository $profilRepository, private UserPasswordHasherInterface $passwordHasher)
     {
         $this->profilRepository = $profilRepository;
 
@@ -29,7 +31,7 @@ class UserFixtures extends Fixture
         $profil->setProfilSys(true);
         $profil->setDateCreat(new \DateTime());
         $manager->persist($profil);
-        $profils[] =$profil->getId();
+        $profils[] = $profil->getId();
         $manager->flush();
 
         $profil2 = new Profil();
@@ -77,17 +79,28 @@ class UserFixtures extends Fixture
         $profil6->setProfilSys(true);
         $profil6->setDateCreat(new \DateTime());
         $manager->persist($profil6);
-        $profils[] =$profil6->getId();
-
         $manager->flush();
+
+        $profils_array =[$profil->getId() ,
+            $profil2->getId(),
+            $profil3->getId(),
+            $profil4->getId(),
+            $profil5->getId(),
+            $profil6->getId()];
 
 
         $isConnect = [true, false];
-        $Date = "2022-04-02";
-        $lastConnect = date('Y-m-d', strtotime($Date . ' + 5 days'));
+        $Date = new \DateTime();
+        $lastConnect = date('Y-m-d', strtotime($Date->format('Y-m-d') . ' + 5 days'));
+        $dateCreated = date('Y-m-d', strtotime($Date->format('Y-m-d') . ' - 5 days'));
+
         for ($i = 1; $i < 28; $i++) {
-            $user = new User();
+            $user = new Users();
+            $newPassword = $this->passwordHasher->hashPassword($user, '123456789');
+
             $user->setLogin("login$i@email.com");
+            $user->setEmail("login$i@email.com");
+            $user->setPassword($newPassword);
             $user->setNom("nom $i");
             $user->setPrenom("prenom $i");
             $user->setPwd("password");
@@ -95,12 +108,12 @@ class UserFixtures extends Fixture
             $user->setEtatConnect($isConnect[array_rand($isConnect)]);
             $user->setIsAdminOng(false);
             $user->setDateDernCon(new \DateTime($lastConnect));
-            $user->setDateCreat(new \DateTime());
+            $user->setDateCreat(new \DateTime($dateCreated));
             $manager->persist($user);
 
             $profil_user = new ProfilUser();
             $profil_user->setUser($user);
-            $profil_user->setProfil($this->profilRepository->find(rand(31,36)));
+            $profil_user->setProfil($this->profilRepository->find($profils_array[array_rand($profils_array)]));
             $manager->persist($profil_user);
         }
 

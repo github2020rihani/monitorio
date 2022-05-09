@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ca397a235387fc7d52b7a72a5ac4e0e599f0ae52',
+        'reference' => '6489376df676ad7c783f89b78f72cbd5d1067637',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ca397a235387fc7d52b7a72a5ac4e0e599f0ae52',
+            'reference' => '6489376df676ad7c783f89b78f72cbd5d1067637',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -92,12 +92,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/doctrine-bundle' => array(
-            'pretty_version' => '2.6.2',
-            'version' => '2.6.2.0',
+            'pretty_version' => '2.6.3',
+            'version' => '2.6.3.0',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../doctrine/doctrine-bundle',
             'aliases' => array(),
-            'reference' => '53cf797feda995299629bed081ffb51776f36e9f',
+            'reference' => '527970d22b8ca6472ebd88d7c42e512550bd874e',
             'dev_requirement' => false,
         ),
         'doctrine/doctrine-fixtures-bundle' => array(
@@ -164,12 +164,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/orm' => array(
-            'pretty_version' => '2.11.2',
-            'version' => '2.11.2.0',
+            'pretty_version' => '2.12.2',
+            'version' => '2.12.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/orm',
             'aliases' => array(),
-            'reference' => '9c351e044478135aec1755e2c0c0493a4b6309db',
+            'reference' => '8291a7f09b12d14783ed6537b4586583d155869e',
             'dev_requirement' => false,
         ),
         'doctrine/persistence' => array(
@@ -224,6 +224,15 @@
             'install_path' => __DIR__ . '/../gedmo/doctrine-extensions',
             'aliases' => array(),
             'reference' => '20e682c5c376faa4c88421453707741e1dd1f131',
+            'dev_requirement' => false,
+        ),
+        'gesdinet/jwt-refresh-token-bundle' => array(
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../gesdinet/jwt-refresh-token-bundle',
+            'aliases' => array(),
+            'reference' => '8970ae1a602fb74e434964d03c969d883cfed376',
             'dev_requirement' => false,
         ),
         'hackzilla/password-generator' => array(
@@ -846,6 +855,15 @@
             'reference' => 'b5ed59c4536d8386cd37bb86df2b7bd5fbbd46d4',
             'dev_requirement' => false,
         ),
+        'symfony/phpunit-bridge' => array(
+            'pretty_version' => 'v6.0.8',
+            'version' => '6.0.8.0',
+            'type' => 'symfony-bridge',
+            'install_path' => __DIR__ . '/../symfony/phpunit-bridge',
+            'aliases' => array(),
+            'reference' => '4959a1eedd473bdb3f19db5b1525d5415dfab471',
+            'dev_requirement' => true,
+        ),
         'symfony/polyfill-ctype' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1009,12 +1027,12 @@
             'dev_requirement' => false,
         ),
         'symfony/security-bundle' => array(
-            'pretty_version' => 'v5.4.5',
-            'version' => '5.4.5.0',
+            'pretty_version' => 'v5.4.8',
+            'version' => '5.4.8.0',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/security-bundle',
             'aliases' => array(),
-            'reference' => 'd6ae2f605fa8e4e0860c1a6574271af2bb4ba16c',
+            'reference' => '9806c9d491584e14a4444ea861a15428ab4b00be',
             'dev_requirement' => false,
         ),
         'symfony/security-core' => array(
@@ -1207,6 +1225,15 @@
             'install_path' => __DIR__ . '/../symfony/yaml',
             'aliases' => array(),
             'reference' => 'e80f87d2c9495966768310fc531b487ce64237a2',
+            'dev_requirement' => false,
+        ),
+        'symfonycasts/verify-email-bundle' => array(
+            'pretty_version' => 'v1.10.0',
+            'version' => '1.10.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfonycasts/verify-email-bundle',
+            'aliases' => array(),
+            'reference' => '7b9b1f59093dd260afa91eb6b3a220906a0fe0e2',
             'dev_requirement' => false,
         ),
         'twig/extra-bundle' => array(

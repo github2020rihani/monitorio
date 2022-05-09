@@ -1,14 +1,92 @@
 nelmio_api_doc:
+    models: { use_jms: false }
+    media_types:
+        # Default:
+        - json
+        - xml
+
     documentation:
-#        servers:
-#            - url: http://api.example.com/unsafe
-#              description: API over HTTP
-#            - url: https://api.example.com/secured
-#              description: API over HTTPS
         info:
             title: My App
             description: This is an awesome app!
             version: 1.0.0
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+        security:
+            - Bearer: [ ]
+        paths:
+            /api/login_check:
+                post:
+                    tags:
+                        - Authentication
+                    summary: Login into the api.
+                    requestBody:
+                        content:
+                            application/json:
+                                schema:
+                                    properties:
+                                        username:
+                                            type: string
+                                        password:
+                                            type: string
+                                    type: object
+                    responses:
+                        '200':
+                            description: OK
+                            content:
+                                application/json:
+                                    schema:
+                                        type: object
+                                        properties:
+                                            token:
+                                                type: string
+                                            refresh_token:
+                                                type: string
+                        '401':
+                            description: Invalid credentials
+                        '400':
+                            description: Invalid JSON.
+                    security: [ ]
+
+
+            /api/users/countStat:
+                get:
+                    tags:
+                        - Statistique-Users
+                    summary: Nombre des utilisateurs total et nombre des utilisateur qui sont connectés actuellement
+                    responses:
+                        '200':
+                            description: OK
+                            content:
+                                application/json:
+                                    schema:
+                                        type: object
+                                        properties:
+                                            title:
+                                                type: string
+                                            color:
+                                                type: string
+                                            subTitle:
+                                                type: string
+                                            imageIcon:
+                                                type: string
+                        '401':
+                            description: Invalid credentials
+                        '400':
+                            description: Invalid JSON.
+                    security:
+                        - Bearer: [ ]
+
+
+
+
+
+
+
     areas: # to filter documented areas
         path_patterns:
-            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
+            - ^/api(?!(/doc|/doc.json|/token/refresh)$)

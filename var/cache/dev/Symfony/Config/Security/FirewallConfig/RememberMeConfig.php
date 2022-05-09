@@ -32,7 +32,7 @@ class RememberMeConfig
     private $_usedProperties = [];
     
     /**
-     * @default null
+     * @default '%kernel.secret%'
      * @param ParamConfigurator|mixed $value
      * @return $this
      */

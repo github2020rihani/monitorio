@@ -18,41 +18,60 @@ class ProfilUser
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="profilUsers")
+     * @ORM\ManyToOne(targetEntity=Profil::class, inversedBy="profilUsers")
+     */
+    private $profil;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Users::class, inversedBy="profilUsers")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity=profil::class, inversedBy="profilUsers")
+     * @return mixed
      */
-    private $profil;
-
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getUser(): ?User
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getProfil(): ?Profil
+    {
+        return $this->profil;
+    }
+
+    public function setProfil(?Profil $profil): self
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    public function getUser(): ?Users
     {
         return $this->user;
     }
 
-    public function setUser(?User $user): self
+    public function setUser(?Users $user): self
     {
         $this->user = $user;
 
         return $this;
     }
 
-    public function getProfil(): ?profil
-    {
-        return $this->profil;
-    }
+ 
 
-    public function setProfil(?profil $profil): self
-    {
-        $this->profil = $profil;
 
-        return $this;
-    }
+
+
+
+
 }

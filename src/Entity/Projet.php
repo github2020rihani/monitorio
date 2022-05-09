@@ -729,8 +729,13 @@ class Projet implements \JsonSerializable
     public function jsonSerialize()
     {
         return [
+            "code" => $this->getCodeProjet(),
             "titre" => $this->getTitreProjet(),
             "desc" => $this->getDescProjet(),
+            "startDate" => $this->getStartDate(),
+            "endDate" => $this->getEndDate(),
+            "budget" => $this->getBudget(),
+            "location" => $this->getLocation(),
         ];
     }
 }

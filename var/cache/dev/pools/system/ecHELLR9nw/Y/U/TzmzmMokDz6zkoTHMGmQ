@@ -1,0 +1,171 @@
+<?php //App%255CController%255CProfilController%2523index
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone ($p['OpenApi\\Annotations\\Get'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Get')),
+        clone ($p['OpenApi\\Context'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Context')),
+        clone ($p['OpenApi\\Loggers\\DefaultLogger'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Loggers\\DefaultLogger')),
+        clone ($p['OpenApi\\Annotations\\Response'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Response')),
+        clone ($p['OpenApi\\Annotations\\MediaType'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\MediaType')),
+        clone ($p['OpenApi\\Annotations\\Schema'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Schema')),
+        clone ($p['OpenApi\\Annotations\\Property'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Property')),
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\Property'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone ($p['OpenApi\\Annotations\\Tag'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Tag')),
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+    ],
+    null,
+    [
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                '/index',
+            ],
+            'methods' => [
+                [
+                    'GET',
+                ],
+            ],
+        ],
+        'stdClass' => [
+            'description' => [
+                1 => 'list of profiles',
+                4 => 'Returns the list of profile',
+            ],
+            '_context' => [
+                1 => $o[2],
+                4 => $o[17],
+                $o[15],
+                $o[13],
+                $o[8],
+                10 => $o[11],
+                19 => $o[20],
+            ],
+            'logger' => [
+                2 => $o[3],
+                8 => $o[9],
+                11 => $o[12],
+                13 => $o[14],
+                15 => $o[16],
+                17 => $o[18],
+                20 => $o[21],
+            ],
+            'filename' => [
+                2 => 'C:\\Users\\wazol\\OneDrive\\Bureau\\Projects\\monitorio\\Backend\\project\\vendor\\doctrine\\annotations\\lib\\Doctrine\\Common\\Annotations\\DocParser.php',
+                8 => 'C:\\Users\\wazol\\OneDrive\\Bureau\\Projects\\monitorio\\Backend\\project\\vendor\\doctrine\\annotations\\lib\\Doctrine\\Common\\Annotations\\DocParser.php',
+                11 => 'C:\\Users\\wazol\\OneDrive\\Bureau\\Projects\\monitorio\\Backend\\project\\vendor\\doctrine\\annotations\\lib\\Doctrine\\Common\\Annotations\\DocParser.php',
+                13 => 'C:\\Users\\wazol\\OneDrive\\Bureau\\Projects\\monitorio\\Backend\\project\\vendor\\doctrine\\annotations\\lib\\Doctrine\\Common\\Annotations\\DocParser.php',
+                15 => 'C:\\Users\\wazol\\OneDrive\\Bureau\\Projects\\monitorio\\Backend\\project\\vendor\\doctrine\\annotations\\lib\\Doctrine\\Common\\Annotations\\DocParser.php',
+                17 => 'C:\\Users\\wazol\\OneDrive\\Bureau\\Projects\\monitorio\\Backend\\project\\vendor\\doctrine\\annotations\\lib\\Doctrine\\Common\\Annotations\\DocParser.php',
+                20 => 'C:\\Users\\wazol\\OneDrive\\Bureau\\Projects\\monitorio\\Backend\\project\\vendor\\doctrine\\annotations\\lib\\Doctrine\\Common\\Annotations\\DocParser.php',
+            ],
+            'line' => [
+                2 => 977,
+                8 => 977,
+                11 => 977,
+                13 => 977,
+                15 => 977,
+                17 => 977,
+                20 => 977,
+            ],
+            'method' => [
+                2 => 'Annotation',
+                8 => 'Annotation',
+                11 => 'Annotation',
+                13 => 'Annotation',
+                15 => 'Annotation',
+                17 => 'Annotation',
+                20 => 'Annotation',
+            ],
+            'class' => [
+                2 => 'DocParser',
+                8 => 'DocParser',
+                11 => 'DocParser',
+                13 => 'DocParser',
+                15 => 'DocParser',
+                17 => 'DocParser',
+                20 => 'DocParser',
+            ],
+            'namespace' => [
+                2 => 'Doctrine\\Common\\Annotations',
+                8 => 'Doctrine\\Common\\Annotations',
+                11 => 'Doctrine\\Common\\Annotations',
+                13 => 'Doctrine\\Common\\Annotations',
+                15 => 'Doctrine\\Common\\Annotations',
+                17 => 'Doctrine\\Common\\Annotations',
+                20 => 'Doctrine\\Common\\Annotations',
+            ],
+            'annotations' => [
+                2 => [
+                    $o[1],
+                ],
+                8 => [
+                    $o[7],
+                ],
+                11 => [
+                    $o[10],
+                ],
+                13 => [
+                    $o[6],
+                ],
+                15 => [
+                    $o[5],
+                ],
+                17 => [
+                    $o[4],
+                ],
+                20 => [
+                    $o[19],
+                ],
+            ],
+            'response' => [
+                4 => '200',
+            ],
+            'content' => [
+                4 => [
+                    $o[5],
+                ],
+            ],
+            'mediaType' => [
+                5 => 'application/json',
+            ],
+            'schema' => [
+                5 => $o[6],
+            ],
+            'properties' => [
+                6 => [
+                    $o[7],
+                    $o[10],
+                ],
+            ],
+            'property' => [
+                7 => 'NomProfil',
+                10 => 'ProfilDesc',
+            ],
+            'type' => [
+                7 => 'string',
+                10 => 'string',
+            ],
+            'name' => [
+                19 => 'Profil',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[4],
+        $o[19],
+    ],
+    []
+); }];
