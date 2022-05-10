@@ -102,7 +102,7 @@ class AuthController extends AbstractController
 
     /**
      * @param ProfilUserRepository $profilUserRepository
-     * @Route("api/detail", name="user.detail")
+     * @Route("api/detail/user", name="user.detail")
      * @OA\Tag(name="Authentification")
      * @return JsonResponse
      */
@@ -124,7 +124,7 @@ class AuthController extends AbstractController
 
 
     /**
-     * @Route("api/auth/login", name="auth_login", methods={"POST"})
+     * @Route("auth/login", name="auth_login", methods={"POST"})
      * @OA\Tag(name="Authentification")
      */
     public function loginauth(Request $request, UsersRepository $userRepository, UserPasswordHasherInterface $encoder,

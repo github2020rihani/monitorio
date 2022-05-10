@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '6489376df676ad7c783f89b78f72cbd5d1067637',
+        'reference' => '7c3b2de75ac76e8ae0a0d72ef053de04d5c63ab3',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '6489376df676ad7c783f89b78f72cbd5d1067637',
+            'reference' => '7c3b2de75ac76e8ae0a0d72ef053de04d5c63ab3',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -723,6 +723,15 @@
             'reference' => '7520f553c7a7721652c1b7ac95c09dae62a1676e',
             'dev_requirement' => false,
         ),
+        'symfony/google-mailer' => array(
+            'pretty_version' => 'v5.4.8',
+            'version' => '5.4.8.0',
+            'type' => 'symfony-mailer-bridge',
+            'install_path' => __DIR__ . '/../symfony/google-mailer',
+            'aliases' => array(),
+            'reference' => '8da892489a7536e869c56efa06bf2f74f15a4693',
+            'dev_requirement' => false,
+        ),
         'symfony/http-client' => array(
             'pretty_version' => 'v5.4.7',
             'version' => '5.4.7.0',
@@ -774,13 +783,22 @@
             'reference' => '47a1413da15ff840d7c419fa704d32caba3276ac',
             'dev_requirement' => false,
         ),
-        'symfony/mailer' => array(
+        'symfony/mailchimp-mailer' => array(
             'pretty_version' => 'v5.4.7',
             'version' => '5.4.7.0',
+            'type' => 'symfony-mailer-bridge',
+            'install_path' => __DIR__ . '/../symfony/mailchimp-mailer',
+            'aliases' => array(),
+            'reference' => 'd9474abc8cd4c8a9cadd6e6c6bf667801d2fbdae',
+            'dev_requirement' => false,
+        ),
+        'symfony/mailer' => array(
+            'pretty_version' => 'v5.4.8',
+            'version' => '5.4.8.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/mailer',
             'aliases' => array(),
-            'reference' => '03332035eef89557db9eb7ead4e899685d5962b9',
+            'reference' => 'c6e7aa958cb2884d68562264f421ffea59cdad41',
             'dev_requirement' => false,
         ),
         'symfony/maker-bundle' => array(

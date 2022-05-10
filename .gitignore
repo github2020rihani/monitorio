@@ -1,6 +1,8 @@
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
+/var/
+/vendor/
 ###< lexik/jwt-authentication-bundle ###
 
 ###> symfony/phpunit-bridge ###

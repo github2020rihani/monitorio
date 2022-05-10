@@ -5,7 +5,9 @@ namespace App\Controller\Api\Statistique;
 use App\Repository\ProfilRepository;
 use App\Repository\ProfilUserRepository;
 use App\Repository\UsersRepository;
+use App\Services\MailerService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use OpenApi\Annotations as OA;
 use Symfony\Component\Validator\Constraints\DateTime;
@@ -13,7 +15,7 @@ use Nelmio\ApiDocBundle\Annotation\Security;
 
 
 /**
- * @Route("/api/users", name="api_users")
+ * @Route("api/users", name="api_users")
  */
 class UserController extends AbstractController
 {
@@ -28,7 +30,7 @@ class UserController extends AbstractController
      * @param ProfilRepository $profilRepository
      * @param ProfilUserRepository $profilUserRepository
      */
-    public function __construct(UsersRepository $userRepository,
+    public function __construct(UsersRepository  $userRepository,
                                 ProfilRepository $profilRepository, ProfilUserRepository $profilUserRepository)
     {
         $this->userRepository = $userRepository;
@@ -83,7 +85,7 @@ class UserController extends AbstractController
 
         $currentDate = (new \DateTime());
         $firstDate = date('Y-m-d', strtotime($currentDate->format('Y-m-d') . ' -7 days'));
-        $users = $this->userRepository->countUserRegister($firstDate ,$currentDate->format('Y-m-d'));
+        $users = $this->userRepository->countUserRegister($firstDate, $currentDate->format('Y-m-d'));
         $data = [];
         foreach ($users as $user) {
             $data[] = [
@@ -131,7 +133,8 @@ class UserController extends AbstractController
      * @OA\Tag(name="Statistique-Users")
      */
 
-    public function countRegister() {
+    public function countRegister()
+    {
         $users = $this->userRepository->findAll();
         return $this->json(count($users));
 
@@ -140,20 +143,21 @@ class UserController extends AbstractController
     /**
      * @Route("/countStat", name="nbr_users_count",  methods={"GET"})
      */
-    public function countUsers() {
+    public function countUsers()
+    {
         $currentDate = (new \DateTime());
         $users = $this->userRepository->findAll();
         $usersConnected = $this->userRepository->countUserConnectedByDay($currentDate->format('Y-m-d'));
         $data = [];
-        $res1['title'] = count($users) ;
-        $res1['color'] =  '#00C4B4' ;
-        $res1['subTitle'] = 'Nombre de utilisateurs' ;
-        $res1['imageIcon'] = '/images/dashboard/icon-wallet.png' ;
+        $res1['title'] = count($users);
+        $res1['color'] = '#00C4B4';
+        $res1['subTitle'] = 'Nombre de utilisateurs';
+        $res1['imageIcon'] = '/images/dashboard/icon-wallet.png';
 
-        $res2['title'] = count($usersConnected) ;
-        $res2['color'] =  '#00C4B4' ;
-        $res2['subTitle'] = 'Nombre de utilisateurs connectée' ;
-        $res2['imageIcon'] = '/images/dashboard/icon-wallet.png' ;
+        $res2['title'] = count($usersConnected);
+        $res2['color'] = '#00C4B4';
+        $res2['subTitle'] = 'Nombre de utilisateurs connectée';
+        $res2['imageIcon'] = '/images/dashboard/icon-wallet.png';
         $data = [$res1, $res2];
 
         return $this->json($data);
@@ -164,7 +168,8 @@ class UserController extends AbstractController
      * @Route("/statProfil", name="nbr_users_profile",  methods={"GET"})
      */
 
-    public function countProfileUser() {
+    public function countProfileUser()
+    {
         $data = [];
         $profils = $this->profilRepository->findAll();
         if ($profils) {
@@ -198,7 +203,7 @@ class UserController extends AbstractController
 
         $currentDate = (new \DateTime());
         $firstDate = date('Y-m-d', strtotime($currentDate->format('Y-m-d') . ' -7 days'));
-        $users = $this->userRepository->countUserVisitor($firstDate ,$currentDate->format('Y-m-d'));
+        $users = $this->userRepository->countUserVisitor($firstDate, $currentDate->format('Y-m-d'));
         $data = [];
         foreach ($users as $user) {
             $data[] = [
@@ -209,6 +214,7 @@ class UserController extends AbstractController
         return $this->json($data);
 
     }
+
 
 
 }
