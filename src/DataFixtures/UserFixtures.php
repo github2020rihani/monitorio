@@ -96,7 +96,7 @@ class UserFixtures extends Fixture
 
         for ($i = 1; $i < 28; $i++) {
             $user = new Users();
-            $newPassword = $this->passwordHasher->hashPassword($user, '123456789');
+            $newPassword = $this->passwordHasher->hashPassword($user, '123456789'); //cryptage password
 
             $user->setLogin("login$i@email.com");
             $user->setEmail("login$i@email.com");

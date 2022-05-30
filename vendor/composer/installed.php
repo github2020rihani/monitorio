@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7c3b2de75ac76e8ae0a0d72ef053de04d5c63ab3',
+        'reference' => '41b1ddcb9b49904937eeb4c75a7c5efb53922108',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7c3b2de75ac76e8ae0a0d72ef053de04d5c63ab3',
+            'reference' => '41b1ddcb9b49904937eeb4c75a7c5efb53922108',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -820,12 +820,12 @@
             'dev_requirement' => false,
         ),
         'symfony/mime' => array(
-            'pretty_version' => 'v5.4.7',
-            'version' => '5.4.7.0',
+            'pretty_version' => 'v5.4.8',
+            'version' => '5.4.8.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/mime',
             'aliases' => array(),
-            'reference' => '92d27a34dea2e199fa9b687e3fff3a7d169b7b1c',
+            'reference' => 'af49bc163ec3272f677bde3bc44c0d766c1fd662',
             'dev_requirement' => false,
         ),
         'symfony/monolog-bridge' => array(

@@ -51,8 +51,8 @@ class ProjetFixtures extends Fixture
 
             for ($j = 0 ; $j < $randamnbrSecteur ; $j++) {
                 $projSec = new ProjetSect();
-                $projSec->setProjet($projet);
-                $projSec->setSecteur($this->secteurRepository->find($secteurs_array[array_rand($secteurs_array)]));
+                $projSec->setProjet($projet); //save objet
+                $projSec->setSecteur($this->secteurRepository->find($secteurs_array[array_rand($secteurs_array)])); //find by id
                 $manager->persist($projSec);
             }
 

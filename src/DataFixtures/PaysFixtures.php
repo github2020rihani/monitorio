@@ -15,8 +15,6 @@ class PaysFixtures extends Fixture
             $pays->setNomPays("paye $i");
             $pays->setDateCreat(new \DateTime());
             $manager->persist($pays);
-
-
         }
             $manager->flush();
     }

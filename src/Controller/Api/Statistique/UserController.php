@@ -6,12 +6,16 @@ use App\Repository\ProfilRepository;
 use App\Repository\ProfilUserRepository;
 use App\Repository\UsersRepository;
 use App\Services\MailerService;
+use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
+use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use OpenApi\Annotations as OA;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Nelmio\ApiDocBundle\Annotation\Security;
+use PHPUnit\Util\Json;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 
 /**
@@ -50,8 +54,13 @@ class UserController extends AbstractController
      * @Security(name="Bearer")
      * @Route("/index", name="statistique_users_by_profil",  methods={"GET"})
      */
-    public function statistiqueUserByProfile()
+    public function statistiqueUserByProfile(Request $request , JWTEncoderInterface $encoder, TokenStorageInterface $tokenStorageInterface, JWTTokenManagerInterface $jwtManager)
     {
+$jwt = $request->headers->get('Authorization');
+//dd($user = $this->get('security.token_storage')->getToken());
+//        dd(explode( 'Bearer ', $jwt)[1]);
+
+
 
         $data = [];
         $profils = $this->profilRepository->findAll();
@@ -86,6 +95,7 @@ class UserController extends AbstractController
         $currentDate = (new \DateTime());
         $firstDate = date('Y-m-d', strtotime($currentDate->format('Y-m-d') . ' -7 days'));
         $users = $this->userRepository->countUserRegister($firstDate, $currentDate->format('Y-m-d'));
+      //  dd($users);
         $data = [];
         foreach ($users as $user) {
             $data[] = [

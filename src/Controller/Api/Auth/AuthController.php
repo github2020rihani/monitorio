@@ -130,10 +130,12 @@ class AuthController extends AbstractController
     public function loginauth(Request $request, UsersRepository $userRepository, UserPasswordHasherInterface $encoder,
                               JWTTokenManagerInterface $JWTTokenManager)
     {
-        $jsonData = json_decode($request->getContent());
+        $jsonData = json_decode($request->getContent()); //email , password
+        //if exist email
         $user = $userRepository->findOneBy([
             'email'=>$jsonData->email,
         ]);
+
         if (!$user || !$encoder->isPasswordValid($user,$jsonData->password)) {
             return $this->json([
                 'message' => 'email or password is wrong.',

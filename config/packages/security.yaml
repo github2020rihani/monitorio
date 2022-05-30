@@ -40,8 +40,6 @@ security:
       stateless: true
       refresh_jwt:
         provider: app_user_provider
-
-
     #      refresh_jwt:
 #        check_path: /api/token/refresh # or, you may use the `api_refresh_token` route name
     api:
